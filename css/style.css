@@ -1,0 +1,189 @@
+html{
+    font-size: 62.5%; /** Reset para REMS - 62.5%=10px de 16px **/
+    box-sizing: border-box;
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+body{
+    background-color:#e9e4e6;
+    font-family: 'Raleway', sans-serif !important;
+}
+
+/* Bar content */
+
+.bar{
+    background-color: #048998;
+    height: 6rem;
+}
+.bar h1{
+    font-size: 2.5rem;
+    color: #e9e4e6;
+    font-family: 'Raleway', sans-serif;
+}
+.bar h1 i{
+    font-size: 2.3rem;
+}
+.bar a{
+    font-size: 2rem;
+    color: #e9e4e6;
+    font-family: 'Raleway', sans-serif;
+}
+.bar a:hover{
+    color: black;
+}
+
+/* Sidebar Content */ 
+
+.project-content{
+    background: #3bb4c1;
+}
+@media (min-width: 576px){
+    .project-content{
+        height: 95vh;
+    }
+}
+.main-content{
+    background-color: #e9e4e6;
+}
+
+@media (min-width: 576px){
+    .main-content{
+        height: 95vh;
+    }
+}
+
+.project-content{
+    padding: 8rem 0 4rem 0;
+    text-align: center;
+}
+
+.create-project{
+    display: block; 
+}
+
+.create-project a{
+    font-size: 2rem;
+}
+
+.project-list h2{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.project-list ul{
+    list-style: none;
+    margin:0;
+    padding: 1.5rem 0 0 0;
+}
+
+.project-list ul li a{
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: black;
+}
+
+.project-list ul li a:hover{
+    color: white;
+}
+
+/* Main Content */ 
+
+.main-content{
+    padding: 8rem 0 4rem 0;
+    text-align: center;
+}
+
+.main-content h2{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.add-task{
+    background: #3bb4c1;
+    margin: 3rem auto;
+    border-radius: 1rem;
+    padding: 4rem 2rem;  
+    max-width: 80rem;
+}
+form .field{
+    font-size: 2rem;
+
+}
+form label{
+    font-weight: 500;
+}
+form .task-name{
+    border-radius: 2rem;
+    border: none;
+    font-size: 1.9rem;
+    padding-left: 2rem;
+    height: 4rem;
+    margin-bottom: 1rem;
+    width: 70%
+}
+form .send{
+    font-size: 1.7rem;
+    font-weight: 500;
+    min-width: 10rem;
+}
+
+.main-content h3{
+    font-weight: 600;
+}
+.task-list{
+    background: #e9e4e6;
+    max-width: 80rem;
+    margin: 3rem auto;
+    border: 0.1rem solid black;
+    padding: 2rem;
+}
+
+.task-list ul{
+    list-style: none;
+    margin: 0;
+    padding: 1.5rem 0
+}
+.task-list ul li p{
+    font-size: 1.7rem;
+}
+.task-list ul li .action{
+    font-size: 1.7rem;
+}
+.task-list ul li .action i:hover{
+    cursor: pointer;
+}
+
+/* Create Account and login page */
+.createAccount, .login{
+    background-color: #3bb4c1;
+}
+
+.createAccount-container{
+    margin-top: 20rem;
+}
+
+.login-box{
+    border: 1px solid black;
+    min-height: 20rem;
+    padding: 4rem;
+    max-width: 60rem;
+    margin: 0 auto;
+}
+.field input[type='text'], input[type='password']{
+    width: 78%;
+    border-radius: 2rem;
+    border: 1px solid black;
+    padding-left: 1.5rem;
+}
+.login-box .field a{
+    text-decoration: none;
+    color: white;
+}
+.login-box .field a:hover{
+    color:black;
+}
+
+
+
