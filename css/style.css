@@ -88,6 +88,11 @@ body{
     color: white;
 }
 
+.project-list ul li input[type="text"]{
+    width: 100%;
+    height: 2.3rem;
+}
+
 /* Main Content */ 
 
 .main-content{
@@ -161,29 +166,44 @@ form .send{
 }
 
 .createAccount-container{
-    margin-top: 20rem;
+    margin-top: 13rem;
 }
 
-.login-box{
+
+.form-box{
     border: 1px solid black;
     min-height: 20rem;
-    padding: 4rem;
+    padding: 1rem;
     max-width: 60rem;
     margin: 0 auto;
 }
+@media (min-width: 575px){
+    .form-box{
+        padding: 4rem;
+    }
+}
+
 .field input[type='text'], input[type='password']{
     width: 78%;
     border-radius: 2rem;
     border: 1px solid black;
     padding-left: 1.5rem;
 }
-.login-box .field a{
+.form-box .field a{
     text-decoration: none;
     color: white;
+    font-size: 1.8rem;
 }
-.login-box .field a:hover{
+
+@media (min-width: 575px){
+    .form-box .field a{
+        font-size: 2.2rem;
+    }    
+}
+.form-box .field a:hover{
     color:black;
 }
+
 
 
 
