@@ -40,7 +40,7 @@
         } catch (Exception $e) {
             // Error, take the exception
             $answer = array(
-                'pass' => $e -> getMessage()
+                'error' => $e -> getMessage()
             );
         }
 

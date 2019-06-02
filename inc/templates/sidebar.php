@@ -4,16 +4,25 @@
     </div>
     
     <div class="project-list mt-4">
-        <h2>Project list</h2>
+        <h2 class="text-center">Project list</h2>
 
         <ul id="projects">
-            <li class="d-flex justify-content-start mb-2">
-                <a href="#">Web page design</a>
-            </li>
+            <?php
+                $projects = getProjects();
+                if($projects){
+                    foreach($projects as $project){?>
 
-            <li class="d-flex justify-content-start mb-2">
-                <a href="#">New site in Wordpress</a>     
-            </li>
+                        
+                        <li class="d-flex justify-content-start mb-2 ml-2">
+                            <a href = "index.php?id_project=<?php echo $project['id'];?>" id="project:<?php echo $project['id'];?>">
+                                <?php echo $project['name'];?>
+                            </a>
+                        </li>
+
+                    <?php }
+                }
+
+            ?>
         </ul>
     </div>
         

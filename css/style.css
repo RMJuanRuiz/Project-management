@@ -17,14 +17,21 @@ body{
     background-color: #048998;
     height: 6rem;
 }
-.bar h1{
+.bar h1 a{
     font-size: 2.5rem;
     color: #e9e4e6;
     font-family: 'Raleway', sans-serif;
 }
+
+.bar h1 a:hover{
+    text-decoration: none;
+    color: #e9e4e6;
+}
+
 .bar h1 i{
     font-size: 2.3rem;
 }
+
 .bar a{
     font-size: 2rem;
     color: #e9e4e6;
@@ -34,6 +41,8 @@ body{
     color: black;
 }
 
+
+
 /* Sidebar Content */ 
 
 .project-content{
@@ -41,7 +50,7 @@ body{
 }
 @media (min-width: 576px){
     .project-content{
-        height: 95vh;
+        height: 100vh;
     }
 }
 .main-content{
@@ -55,8 +64,7 @@ body{
 }
 
 .project-content{
-    padding: 8rem 0 4rem 0;
-    text-align: center;
+    padding: 8rem 0 4rem 0;  
 }
 
 .create-project{
@@ -104,6 +112,9 @@ body{
     font-size: 2.5rem;
     font-weight: 600;
 }
+.main-content h2 span{
+    font-weight: 400;
+}
 
 .add-task{
     background: #3bb4c1;
@@ -150,12 +161,25 @@ form .send{
     margin: 0;
     padding: 1.5rem 0
 }
-.task-list ul li p{
+.task-list  p{
     font-size: 1.7rem;
+    margin: 0;
 }
+.task-list ul li{
+    border-bottom: 1px solid #d1d1d1;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+.task-list ul li:last-of-type {
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+}
+
 .task-list ul li .action{
     font-size: 1.7rem;
 }
+
 .task-list ul li .action i:hover{
     cursor: pointer;
 }
@@ -204,6 +228,30 @@ form .send{
     color:black;
 }
 
+.complete{
+    color: #3bb4c1;
+}
 
+/* sweet alert*/
+.swal2-popup{
+    font-size: 1.7rem !important;
+}
+
+/* Advance bar*/
+.advance-bar{
+    height: 3rem;
+    border: 1px solid black;
+    margin: 0 auto;
+    max-width: 80rem;
+    background: #e4dee1
+}
+.percentage{
+    width: 0%;
+    height: 100%;
+    background: #3bb4c1;
+    background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-size: 1rem 1rem;
+    transition: width .5s ease-in-out;
+}
 
 
