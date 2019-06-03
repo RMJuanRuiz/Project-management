@@ -13,10 +13,15 @@
                     foreach($projects as $project){?>
 
                         
-                        <li class="d-flex justify-content-start mb-2 ml-2">
-                            <a href = "index.php?id_project=<?php echo $project['id'];?>" id="project:<?php echo $project['id'];?>">
+                        <li class="project d-flex justify-content-between mb-2 ml-2 pb-2" id="project:<?php echo $project['id'];?>">
+                            <a href = "index.php?id_project=<?php echo $project['id'];?>">
                                 <?php echo $project['name'];?>
                             </a>
+
+                            <div class="delete-project my-auto">
+                                <i class="fas fa-trash"></i>
+                            </div>
+                        
                         </li>
 
                     <?php }

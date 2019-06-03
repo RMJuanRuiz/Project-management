@@ -61,7 +61,7 @@
                                 foreach($tasks as $task){ ?>
                                     <li id="task:<?php echo $task['id']; ?>" class="task d-flex justify-content-between">
                                         <p class="d-inline"><?php echo $task['name']; ?></p>
-                                        <div class="action d-inline">
+                                        <div class="action my-auto d-inline">
                                             <i class="far fa-check-circle mx-4 <?php echo($task['status'] === '1' ? 'complete' : '')?>"></i>
                                             <i class="fas fa-trash m-auto px-4"></i>
                                         </div>

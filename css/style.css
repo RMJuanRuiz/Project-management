@@ -47,24 +47,16 @@ body{
 
 .project-content{
     background: #3bb4c1;
+    height: 100%;
 }
-@media (min-width: 576px){
+@media (min-width: 768px){
     .project-content{
-        height: 100vh;
-    }
-}
-.main-content{
-    background-color: #e9e4e6;
-}
-
-@media (min-width: 576px){
-    .main-content{
-        height: 95vh;
+       min-height: 100vh;
     }
 }
 
 .project-content{
-    padding: 8rem 0 4rem 0;  
+    padding: 4rem 0 1rem 0;  
 }
 
 .create-project{
@@ -86,6 +78,13 @@ body{
     padding: 1.5rem 0 0 0;
 }
 
+.project-list ul li{
+    border-bottom: 1px solid #048998;
+}
+.project-list ul li:last-of-type{
+    border-bottom: none;
+}
+
 .project-list ul li a{
     text-decoration: none;
     font-size: 1.8rem;
@@ -99,14 +98,29 @@ body{
 .project-list ul li input[type="text"]{
     width: 100%;
     height: 2.3rem;
+    font-size: 1.8rem;
+}
+
+.project-list ul li i{
+    font-size: 1.8rem;
+}
+
+.project-list ul li i:hover{
+    cursor: pointer;
+}
+
+.project-list ul p{
+    font-size: 1.8rem;
 }
 
 /* Main Content */ 
 
 .main-content{
-    padding: 8rem 0 4rem 0;
+    background-color: #e9e4e6;
+    padding: 4rem 0;
     text-align: center;
 }
+
 
 .main-content h2{
     font-size: 2.5rem;
@@ -178,6 +192,7 @@ form .send{
 
 .task-list ul li .action{
     font-size: 1.7rem;
+    min-width: 10rem;
 }
 
 .task-list ul li .action i:hover{

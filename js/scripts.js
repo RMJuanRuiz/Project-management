@@ -2,7 +2,8 @@
 eventListeners();
 // Project list
 var projectList = document.querySelector('ul#projects');
-var taskList = document.querySelector('div.task-list ul')
+var taskList = document.querySelector('div.task-list ul');
+
 
 
 function eventListeners(){
@@ -16,6 +17,10 @@ function eventListeners(){
     // Create new project boton
     document.querySelector(".create-project a").addEventListener('click', newProject);
 
+    // Delete project
+    
+    document.querySelector("#projects").addEventListener('click', deleteProject);
+       
     //New task boton
     if(document.querySelector(".new-task")){
         document.querySelector(".new-task").addEventListener('click', addTask);
@@ -28,6 +33,7 @@ function eventListeners(){
     
 }
 
+// Create a new project
 function newProject(e){
     e.preventDefault();
     
@@ -112,6 +118,74 @@ function saveProjectDB(projectName){
     xhr.send(datos);
     
 }
+
+// Delete project
+function deleteProject(e){
+    if(e.target.classList.contains('fa-trash')){ 
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+            if (result.value) {
+                var deleteProject = e.target.parentElement.parentElement;
+
+                // Delete project from BD and HTML
+                var result = deleteProjectBD(deleteProject);     
+            }
+            })
+    }
+}
+
+// Delete project from BD
+function deleteProjectBD(project){
+    var projectId = project.id.split(":")[1];
+    
+    // AJAX
+    var xhr = new XMLHttpRequest();
+
+    var data = new FormData();
+    data.append('id', projectId);
+    data.append('action', 'delete');
+    
+    xhr.open('POST', 'inc/model/project-model.php', true);
+
+   
+    xhr.onload = function(){
+        if(this.status === 200){
+            answer = JSON.parse(xhr.responseText);
+            console.log(answer);
+            if(answer.answer === "error"){
+                Swal.fire(
+                    'Error!',
+                    'First you have to delete project tasks',
+                    'error'
+                ) 
+            }else{
+                //remove from HTML
+                project.remove();
+                Swal.fire(
+                    'Deleted!',
+                    'Project has been deleted.',
+                    'success'
+                )
+
+                // Redirect to new URL:
+                window.location.href = "index.php";
+            }        
+        }
+        
+    }
+    
+    xhr.send(data);
+    
+}
+
+
 
 // Add new task to actual projec
 function addTask(e){
@@ -283,6 +357,7 @@ function deleteTaskBD(task){
             var remainingTask = document.querySelectorAll("li.task");
             if(remainingTask.length === 0){
                 document.querySelector("div.task-list ul").innerHTML = "<p class='empty-list d-inline task d-flex justify-content-center'>There are not tasks from this project</p>";
+                
             }
 
             // Update the progress each time a task it's deleted
@@ -295,15 +370,20 @@ function deleteTaskBD(task){
 
 // Update project progress 
 function updateProgress(){
+    
     // get tasks
     var tasks = document.querySelectorAll('li.task');
-    
-    // get completed tasks
-    var completedTasks = document.querySelectorAll('i.complete');
+    if(tasks.length > 0){
+        // get completed tasks
+        var completedTasks = document.querySelectorAll('i.complete');
 
-    // Calculate advance
-    advance = Math.round((completedTasks.length / tasks.length)*100);
-    
+        // Calculate advance
+        var advance = Math.round((completedTasks.length / tasks.length)*100);
+        
+    }else{ // If there are not tasks
+        var advance = 0;
+    }
+
     //Assign advance to the bar
     var percentage = document.querySelector('#percentage');
     percentage.style.width = advance+'%';
@@ -315,4 +395,5 @@ function updateProgress(){
             type: 'success'
         })
     }
+    
 }
